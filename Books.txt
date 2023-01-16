@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+
+public class Books {
+    
+    public ArrayList<Book> buku;
+
+    public Books(){
+        this.buku = new ArrayList<>();
+    }
+
+    public void addbuku(){
+        System.out.print("Masukkan nama buku : ");
+        String namabuku = input.nextLine();
+        System.out.print("Masukkan kode buku : ");
+        String kodebuku = input.nextInt();
+        input.nextLine();
+    
+
+        buku.add(new Book(namabuku,kodebuku));
+    }
+
+    public void setbuku(){
+        System.out.print("Masukkan nomor yang akan diedit : ");
+        int nomor = input.nextInt();
+        input.nextLine();
+        System.out.print("Masukkan nama buku : ");
+        String namabuku = input.nextLine();
+        System.out.print("Masukkan kode buku : ");
+        String kodebuku = input.nextInt();
+        input.nextLine();
+
+        buku.set(nomor, new Book(namabuku,kodebuku));
+    }
+    
+    public void removebuku(){
+        System.out.print("Masukkan nomor yang akan dihapus : ");
+        int nomor = input.nextInt();
+        input.nextLine();
+
+        buku.remove(nomor);
+    }
+
+    public void getbuku(){
+        for (int i = 0; i < buku.size(); i++){
+            Book data = buku.get(i);
+            System.out.println(data.namaBuku + "\t" + data.kodeBuku);
+        }
+        System.out.print("\n");
+    }
+}
